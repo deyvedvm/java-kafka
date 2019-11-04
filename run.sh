@@ -37,3 +37,12 @@ vim config/server.properties
 
 # Execute Kafka
 bin/kafka-server-start.sh config/server.properties
+
+
+# Create a topic with name first_topic
+
+bin/kafka-topics.sh --create --bootstrap-server localhost:9092 --replication-factor 1 --partitions 1 --topic first_topic
+
+# We can now see that topic if we run the list topic command
+
+bin/kafka-topics.sh --list --bootstrap-server localhost:9092
