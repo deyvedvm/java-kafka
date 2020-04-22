@@ -41,7 +41,8 @@ bin/kafka-server-start.sh config/server.properties
 
 # Create a topic with name first_topic
 
-bin/kafka-topics.sh --create --bootstrap-server localhost:9092 --replication-factor 1 --partitions 1 --topic first_topic
+bin/kafka-topics.sh --create --bootstrap-server localhost:9092 --replication-factor 1 --partitions 1 --topic account-creation
+bin/kafka-topics.sh --create --bootstrap-server localhost:9092 --replication-factor 1 --partitions 1 --topic transaction-authorization
 
 # We can now see that topic if we run the list topic command
 
@@ -55,4 +56,5 @@ bin/kafka-topics.sh --describe --topic first_topic --bootstrap-server localhost:
 
 # Delete topic
 
-bin/kafka-topics.sh --delete --topic second_topic --bootstrap-server localhost:9092
+bin/kafka-topics.sh --delete --topic account-creation --bootstrap-server localhost:9092
+bin/kafka-topics.sh --delete --topic transaction-authorization --bootstrap-server localhost:9092
